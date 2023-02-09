@@ -10,7 +10,6 @@ public class Database {
 	Tanker tanker = new Tanker();
 	Worriar worriar = new Worriar();
 	Archer archer = new Archer();
-	
 	private void addJob() {
 		job.add(wizzard);
 		job.add(tanker);
