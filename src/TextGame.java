@@ -1,12 +1,14 @@
 import maps.*;
 
+import javax.xml.crypto.Data;
 import java.util.*;
 public class TextGame {
     public static void main(String[] args) {
 
-        Database database = new Database();
         User user = new User();
         Dungeon dungeon = new Dungeon();
+        Gamble gamble = new Gamble();
+        Shop shop = new Shop();
         Scanner start = new Scanner(System.in);
 
         System.out.println("-------------------");
@@ -26,7 +28,7 @@ public class TextGame {
         System.out.println("직업을 선택해 주세요.");
         System.out.println("-------------------");
         int a = start.nextInt();
-        user.job = database.findJob(a);
+        user.job = Database.getInstance().findJob(a);
         System.out.println("-------------------");
         System.out.println("직업 "  + user.job.Jobname + "를(을) 선택하셨습니다.");
         System.out.println("-------------------");
@@ -43,11 +45,11 @@ public class TextGame {
         int start3 = start.nextInt();
 
         if(start3 == 1) {
-            System.out.println("상점으로 이동");
+            shop.goShop();
         } else if(start3 == 2) {
             dungeon.gdDungeon();
         } else if(start3 == 3) {
-            System.out.println("도박장으로 이동");
+            gamble.gdGamble();
         }  else if(start3 == 4) {
             System.out.println("나가기");
         }
