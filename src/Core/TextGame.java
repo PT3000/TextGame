@@ -1,6 +1,7 @@
+package Core;
+
 import maps.*;
 
-import javax.xml.crypto.Data;
 import java.util.*;
 public class TextGame {
     public static void main(String[] args) {
@@ -10,6 +11,7 @@ public class TextGame {
         Gamble gamble = new Gamble();
         Shop shop = new Shop();
         Scanner start = new Scanner(System.in);
+        GameManeger gameManeger = new GameManeger();
 
         System.out.println("-------------------");
         System.out.println("    텍스트 기반게임");
@@ -34,27 +36,7 @@ public class TextGame {
         System.out.println("-------------------");
         System.out.println("이제부터 게임을 시작하겠습니다.");
         System.out.println("-------------------");
-
-        System.out.println("가고 싶은 곳을 선택하세요.");
-        System.out.println("-------------------");
-        System.out.println("1. 상점");
-        System.out.println("2. 던전");
-        System.out.println("3. 도박장");
-        System.out.println("4. 나가기");
-
-        int start3 = start.nextInt();
-
-        if(start3 == 1) {
-            shop.goShop();
-        } else if(start3 == 2) {
-            dungeon.gdDungeon();
-        } else if(start3 == 3) {
-            gamble.gdGamble();
-        }  else if(start3 == 4) {
-            System.out.println("나가기");
-        }
-
-        start.close();
+        Mapmaneger.getInstance().whenGo();
     }
 
 }

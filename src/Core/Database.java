@@ -1,6 +1,9 @@
+package Core;
+
 import java.util.ArrayList;
 
 import jobs.*;
+import maps.Mapmaneger;
 import monster.Monster;
 import monster.Zombie;
 
@@ -9,17 +12,12 @@ public class Database {
 
 	private static Database instance = new Database();
 	ArrayList<Job> job = new ArrayList<Job>();
-	
-	Wizzard wizzard = new Wizzard();
-	Tanker tanker = new Tanker();
-	Worriar worriar = new Worriar();
-	Archer archer = new Archer();
-
+	ArrayList<Monster> monster = new ArrayList<Monster>();
 	private void addJob() {
-		job.add(wizzard);
-		job.add(tanker);
-		job.add(worriar);
-		job.add(archer);
+		job.add(new Wizzard());
+		job.add(new Tanker());
+		job.add(new Worriar());
+		job.add(new Archer());
 	}
 
 	private Database() {
@@ -39,14 +37,19 @@ public class Database {
 		}
 		return null;
 	}
-	ArrayList<Monster> monster = new ArrayList<Monster>();
-	Zombie zombie = new Zombie();
 
 	private void addMonster() {
-		monster.add(zombie);
+		monster.add(new Zombie());
 	}
 
-
+	public Monster findMonster(int id) {
+		for (Monster i : monster) {
+			if (i.id == id) {
+				return i;
+			}
+		}
+		return null;
+	}
 }
 
 

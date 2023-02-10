@@ -1,3 +1,5 @@
+package Core;
+
 import jobs.*;
 
 public class User {

@@ -5,7 +5,5 @@ public class Shop {
         System.out.println("-------------------");
         System.out.println("상점에 입성하였습니다.");
     }
-    public Shop() {
-        goShop();
-    }
+
 }
