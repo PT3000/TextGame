@@ -10,6 +10,7 @@ public class Mapmaneger {
     public Dungeon dungeon = new Dungeon();
     public Gamble gamble = new Gamble();
     public Shop shop = new Shop();
+    public Mine mine = new Mine();
 
     public void whenGo() {
         Scanner start = new Scanner(System.in);
@@ -18,7 +19,8 @@ public class Mapmaneger {
         System.out.println("1. 상점");
         System.out.println("2. 던전");
         System.out.println("3. 도박장");
-        System.out.println("4. 나가기");
+        System.out.println("4. 광산");
+        System.out.println("5. 나가기");
         int start3 = start.nextInt();
 
         if (start3 == 1) {
@@ -28,7 +30,9 @@ public class Mapmaneger {
         } else if (start3 == 3) {
             gamble.goGamble();
         } else if (start3 == 4) {
-            System.out.println("나가기");
+            mine.goMine();
+        } else if (start3 == 5) {
+            System.out.println("게임을 종료합니다.");
         }
 
     }
