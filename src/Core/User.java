@@ -3,10 +3,10 @@ package Core;
 import jobs.*;
 
 public class User {
-	String nickname;
-	Job job;
-	int hp;
-	int money;
-	int mana;
+	public String nickname;
+	public Job job;
+	public int hp = 200;
+	public int money;
+	public int mana;
 
 }

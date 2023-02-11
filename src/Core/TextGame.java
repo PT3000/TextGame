@@ -4,6 +4,7 @@ import maps.*;
 
 import java.util.*;
 public class TextGame {
+    public int a;
     public static void main(String[] args) {
 
         User user = new User();
@@ -12,6 +13,7 @@ public class TextGame {
         Shop shop = new Shop();
         Scanner start = new Scanner(System.in);
         GameManeger gameManeger = new GameManeger();
+        TextGame textGame = new TextGame();
 
         System.out.println("-------------------");
         System.out.println("    텍스트 기반게임");
@@ -29,8 +31,8 @@ public class TextGame {
         System.out.println("4. 궁수");
         System.out.println("직업을 선택해 주세요.");
         System.out.println("-------------------");
-        int a = start.nextInt();
-        user.job = Database.getInstance().findJob(a);
+        textGame.a = start.nextInt();
+        user.job = Database.getInstance().findJob(textGame.a);
         System.out.println("-------------------");
         System.out.println("직업 "  + user.job.Jobname + "를(을) 선택하셨습니다.");
         System.out.println("-------------------");

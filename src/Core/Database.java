@@ -11,6 +11,8 @@ import monster.Zombie;
 public class Database {
 
 	private static Database instance = new Database();
+
+	TextGame textGame = new TextGame();
 	ArrayList<Job> job = new ArrayList<Job>();
 	ArrayList<Monster> monster = new ArrayList<Monster>();
 	private void addJob() {
@@ -23,6 +25,7 @@ public class Database {
 	private Database() {
 		addJob();
 		addMonster();
+
 	}
 
 	public static Database getInstance() {

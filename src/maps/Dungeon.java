@@ -1,13 +1,17 @@
 package maps;
-
 import Core.Database;
+import Core.TextGame;
+import Core.User;
 import monster.Monster;
-
 import java.util.Map;
 import java.util.Scanner;
 
 public class Dungeon {
+
+    TextGame textGame = new TextGame();
+    User user = new User();
     public void goDungeon() {
+
         Scanner scan = new Scanner(System.in);
         System.out.println("-------------------");
         System.out.println("던전에 입성하였습니다.");
@@ -31,6 +35,14 @@ public class Dungeon {
     }
 
     private void fightMonster() {
+        while(true) {
+            if(user.hp < 0) {
 
+            } else {
+                System.out.println("게임에서 패배했습니다.");
+                Mapmaneger.getInstance().whenGo();
+                break;
+            }
+        }
     }
 }
