@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class Dungeon {
 
     TextGame textGame = new TextGame();
-    User user = new User();
     public void goDungeon() {
 
         Scanner scan = new Scanner(System.in);
@@ -36,10 +35,11 @@ public class Dungeon {
 
     private void fightMonster() {
         while(true) {
-            if(user.hp < 0) {
+            if(Database.getInstance().findUser().hp < 0) {
 
             } else {
                 System.out.println("게임에서 패배했습니다.");
+                System.out.println("궁수의 체력은 " + Database.getInstance().findUser().hp + "입니다.");
                 Mapmaneger.getInstance().whenGo();
                 break;
             }

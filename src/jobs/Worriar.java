@@ -18,5 +18,6 @@ public class Worriar extends Job {
 	public Worriar() {
 		id = 3;
 		Jobname = "전사";
+		hp = 300;
 	}
 }

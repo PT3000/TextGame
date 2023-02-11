@@ -35,6 +35,7 @@ public class TextGame {
         user.job = Database.getInstance().findJob(textGame.a);
         System.out.println("-------------------");
         System.out.println("직업 "  + user.job.Jobname + "를(을) 선택하셨습니다.");
+        Database.getInstance().findUser().hp = user.job.hp;
         System.out.println("-------------------");
         System.out.println("이제부터 게임을 시작하겠습니다.");
         System.out.println("-------------------");

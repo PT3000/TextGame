@@ -1,5 +1,7 @@
 package jobs;
 
+import Core.Database;
+
 public class Archer extends Job {
 	private void skillSet() {
 
@@ -17,7 +19,9 @@ public class Archer extends Job {
 	public Archer() {
 		id = 4;
 		Jobname = "궁수";
+		hp = 300;
 		skillSet();
+
 	}
 
 }
