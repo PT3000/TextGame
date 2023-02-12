@@ -58,6 +58,7 @@ public class Dungeon   {
                 System.out.println(user.nickname + "님의 골드: " + user.money);
                 System.out.println(user.nickname + "님의 exp: " + user.exp );
                 Mapmaneger.getInstance().whenGo();
+                break;
             } else if (user.hp < 0) {
                 System.out.println("게임에서 패배했습니다.");
                 Mapmaneger.getInstance().whenGo();
