@@ -15,8 +15,7 @@ public class Wizzard extends Job {
 		skill.get(3).damege = 400;
 
 	}
-
-	 public Wizzard() {
+	public Wizzard() {
 		 id = 1;
 		 Jobname = "법사";
 	 }
