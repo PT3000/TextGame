@@ -8,8 +8,8 @@ public class User {
 	public int hp;
 	public int money;
 	public int mana;
-
-
+	public int exp;
+	public int level;
 
 }
 

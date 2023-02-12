@@ -1,6 +1,9 @@
 package jobs;
 
 import Core.Database;
+import Core.User;
+
+import java.util.ArrayList;
 
 public class Job {
 
@@ -9,10 +12,19 @@ public class Job {
 	public String Jobname;
 	public int hp;
 
+	public ArrayList<Skill> skill = new ArrayList<Skill>();
 
-	public Skill skill1 = new Skill();
-	public Skill skill2 = new Skill();
-	public Skill skill3 = new Skill();
-	public Skill skill4 = new Skill();
+	private void setSkill() {
+		skill.add(new Skill());
+		skill.add(new Skill());
+		skill.add(new Skill());
+		skill.add(new Skill());
+	}
+
+	public Job() {
+		setSkill();
+	}
+
+
 
 }

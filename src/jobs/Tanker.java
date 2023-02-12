@@ -4,15 +4,15 @@ public class Tanker extends Job {
 
 	private void skillSet() {
 
-		skill1.name = "단단해지기";
-		skill2.name = "포탄 던지기";
-		skill3.name = "정의의 주먹";
-		skill4.name = "판 뒤엎기";
+		skill.get(0).name = "단단해지기";
+		skill.get(1).name = "포탄 던지기";
+		skill.get(2).name = "정의의 주먹";
+		skill.get(3).name = "판 뒤엎기";
 
-		skill1.damege = 100;
-		skill2.damege = 200;
-		skill3.damege = 300;
-		skill4.damege = 400;
+		skill.get(0).damege = 100;
+		skill.get(1).damege = 200;
+		skill.get(2).damege = 300;
+		skill.get(3).damege = 400;
 
 	}
 	

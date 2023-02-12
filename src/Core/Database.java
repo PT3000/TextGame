@@ -11,7 +11,6 @@ public class Database {
 
 	private static Database instance = new Database();
 
-	TextGame textGame = new TextGame();
 	ArrayList<Job> job = new ArrayList<Job>();
 	ArrayList<Monster> monster = new ArrayList<Monster>();
 	User user = new User();
@@ -19,8 +18,6 @@ public class Database {
 	public User findUser() {
 		return user;
 	}
-
-
 	private void addJob() {
 		job.add(new Wizzard());
 		job.add(new Tanker());
@@ -58,6 +55,8 @@ public class Database {
 		return null;
 	}
 }
+
+
 
 
 

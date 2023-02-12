@@ -3,7 +3,6 @@ package maps;
 import Core.Database;
 
 import java.util.Scanner;
-
 public class Mapmaneger {
 
     private static Mapmaneger instance = new Mapmaneger();
