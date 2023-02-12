@@ -35,21 +35,26 @@ public class Dungeon   {
     private void fightMonster() throws CloneNotSupportedException {
         User user = Database.getInstance().findUser();
         Monster monster = Database.getInstance().findMonster(1);
-        Monster copyhp = monster.clone();
+        Monster copyMonster = monster.clone();
         while (true) {
             int random = (int)(Math.random()*4);
-            System.out.println(user.job.Jobname + "가 " + user.job.skill.get(random).name + "을 사용하여 좀비에게 피해" + user.job.skill.get(random).damege + "을 입혔습니다.");
-            System.out.println("-------------------");
-            copyhp.hp -= user.job.skill.get(random).damege;
-            System.out.println("좀비의 체력:" + copyhp.hp);
-            System.out.println("궁수의 체력:" + user.hp);
-            System.out.println("-------------------");
-            try {
-                Thread.sleep(1000); //1초 대기
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            int select = (int)(Math.random()*4);
+            switch (1) {
+                case 1:  System.out.println(user.job.Jobname + "가 " + user.job.skill.get(random).name + "을 사용하여 좀비에게 피해" + user.job.skill.get(random).damege + "을 입혔습니다.");
+                    System.out.println("-------------------");
+                    copyMonster.hp -= user.job.skill.get(random).damege;
+                    System.out.println("좀비의 체력:" + copyMonster.hp);
+                    System.out.println("궁수의 체력:" + user.hp);
+                    System.out.println("-------------------");
+                    try {
+                        Thread.sleep(1000); //1초 대기
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    break;
             }
-            if (copyhp.hp <= 0) {
+
+            if (copyMonster.hp <= 0) {
                 System.out.println("게임에서 승리했습니다.");
                 System.out.println("경험치: " + monster.death_exp + "exp 와 골드: " + monster.death_gold +"point 를 얻었습니다");
                 System.out.println("-------------------");

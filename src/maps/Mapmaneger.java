@@ -1,10 +1,6 @@
 package maps;
-
-import Core.Database;
-
 import java.util.Scanner;
 public class Mapmaneger {
-
     private static Mapmaneger instance = new Mapmaneger();
     public Dungeon dungeon = new Dungeon();
     public Gamble gamble = new Gamble();
@@ -33,7 +29,6 @@ public class Mapmaneger {
         } else if (start3 == 5) {
             System.out.println("게임을 종료합니다.");
         }
-
     }
     public static Mapmaneger getInstance() {
         return instance;
