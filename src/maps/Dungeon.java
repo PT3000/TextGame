@@ -36,15 +36,28 @@ public class Dungeon   {
         User user = Database.getInstance().findUser();
         Monster monster = Database.getInstance().findMonster(1);
         Monster copyMonster = monster.clone();
+        User copyUser = user.clone();
         while (true) {
             int random = (int)(Math.random()*4);
-            int select = (int)(Math.random()*4);
-            switch (1) {
-                case 1:  System.out.println(user.job.Jobname + "가 " + user.job.skill.get(random).name + "을 사용하여 좀비에게 피해" + user.job.skill.get(random).damege + "을 입혔습니다.");
+            int select = (int)(Math.random() * 3) + 1;
+            switch (select) {
+                case 1:  System.out.println(copyUser.job.Jobname + "가 " + copyUser.job.skill.get(random).name + "을 사용하여 좀비에게 피해" + copyUser.job.skill.get(random).damege + "을 입혔습니다.");
                     System.out.println("-------------------");
-                    copyMonster.hp -= user.job.skill.get(random).damege;
+                    copyMonster.hp -= copyUser.job.skill.get(random).damege;
                     System.out.println("좀비의 체력:" + copyMonster.hp);
-                    System.out.println("궁수의 체력:" + user.hp);
+                    System.out.println("궁수의 체력:" + copyUser.hp);
+                    System.out.println("-------------------");
+                    try {
+                        Thread.sleep(1000); //1초 대기
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    break;
+                case 2: System.out.println(copyMonster.name + "가 피해 " + copyMonster.damege + "를 " + copyUser.job.Jobname + "에게 입혔습니다.");
+                    System.out.println("-------------------");
+                    copyUser.hp -= copyMonster.damege;
+                    System.out.println("좀비의 체력:" + copyMonster.hp);
+                    System.out.println("궁수의 체력:" + copyUser.hp);
                     System.out.println("-------------------");
                     try {
                         Thread.sleep(1000); //1초 대기
@@ -58,13 +71,13 @@ public class Dungeon   {
                 System.out.println("게임에서 승리했습니다.");
                 System.out.println("경험치: " + monster.death_exp + "exp 와 골드: " + monster.death_gold +"point 를 얻었습니다");
                 System.out.println("-------------------");
-                user.money += monster.death_gold;
-                user.exp += monster.death_exp;
-                System.out.println(user.nickname + "님의 골드: " + user.money);
-                System.out.println(user.nickname + "님의 exp: " + user.exp );
+                copyUser.money += monster.death_gold;
+                copyUser.exp += monster.death_exp;
+                System.out.println(copyUser.nickname + "님의 골드: " + copyUser.money);
+                System.out.println(copyUser.nickname + "님의 exp: " + copyUser.exp );
                 Mapmaneger.getInstance().whenGo();
                 break;
-            } else if (user.hp < 0) {
+            } else if (copyUser.hp <= 0) {
                 System.out.println("게임에서 패배했습니다.");
                 Mapmaneger.getInstance().whenGo();
                 break;
