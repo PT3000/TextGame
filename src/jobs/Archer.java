@@ -14,15 +14,12 @@ public class Archer extends Job {
 		skill.get(1).damege = 200;
 		skill.get(2).damege = 300;
 		skill.get(3).damege = 400;
-
 	}
 	public Archer() {
 		id = 4;
 		Jobname = "궁수";
 		hp = 300;
 		skillSet();
-
 	}
-
 }
 

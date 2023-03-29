@@ -45,7 +45,7 @@ public class Dungeon   {
                     System.out.println("-------------------");
                     copyMonster.hp -= copyUser.job.skill.get(random).damege;
                     System.out.println("좀비의 체력:" + copyMonster.hp);
-                    System.out.println("궁수의 체력:" + copyUser.hp);
+                    System.out.println(copyUser.job.Jobname + "의 체력:" + copyUser.hp);
                     System.out.println("-------------------");
                     try {
                         Thread.sleep(1000); //1초 대기

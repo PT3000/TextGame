@@ -1,20 +1,12 @@
 package Core;
-
 import java.util.ArrayList;
-
 import jobs.*;
-import monster.Monster;
-import monster.Zombie;
-
-
+import monster.*;
 public class Database {
-
 	private static Database instance = new Database();
-
 	ArrayList<Job> job = new ArrayList<Job>();
 	ArrayList<Monster> monster = new ArrayList<Monster>();
 	User user = new User();
-
 	public User findUser() {
 		return user;
 	}
@@ -44,6 +36,7 @@ public class Database {
 
 	private void addMonster() {
 		monster.add(new Zombie());
+		monster.add(new Frankenstein());
 	}
 
 	public Monster findMonster(int id) {
